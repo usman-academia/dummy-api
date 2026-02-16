@@ -123,3 +123,12 @@ def ratelimit_handler(e):
         "message": "Rate limit exceeded",
         "retry_after_seconds": e.retry_after
     }), 429
+
+import os
+
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    print("="*50)
+    print("CALCULATOR API (Per-IP + Per-User)")
+    print("="*50)
+    app.run(host='0.0.0.0', port=port)
